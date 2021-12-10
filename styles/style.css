@@ -29,14 +29,14 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
+    background-image: url(../assets/dungeon.png);
+    background-size: cover;
+    text-align: center;
 }
 
 main {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: calc(var(--footer-height));
+   height: 100%;
 }
 
 section {
@@ -53,13 +53,6 @@ section {
     border: solid 2px var(--color1);
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
-}
 
 
 h2 {
@@ -88,4 +81,88 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+}
+
+.adventurer-stats {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adventurer img {
+    width: 300px;
+    height: 300px;
+}
+
+.adventurer {
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.adventurer p {
+    background-color: brown;
+    border-radius: 15px;
+    padding: 1%;
+}
+
+.goblin-stats {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goblin-stats input, .goblin-stats button {
+    height: 100px;
+}
+
+.goblin-stats button {
+    font-size: 2em;
+}
+
+.goblin-stats input {
+    font-size: 3rem;
+    width: 80%
+}
+
+.defeated-goblins {
+    font-size: 4rem;
+    color: rgb(0, 0, 0);
+    background-color: purple;
+    padding: 0%;
+    border-radius: 15px;
+}
+
+form {
+    padding: 20px;
+    display: flex;
+}
+
+.goblin {
+    cursor: pointer;
+    border: solid 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-color: red;
+    justify-self: flex-end;
+    font-size: 3rem;
+}
+.game-over {
+    background-color: transparent;
+    transform: rotate(45deg);
+}
+.dead {
+    opacity: .5;
+    cursor: default;
 }
