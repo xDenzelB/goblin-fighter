@@ -59,7 +59,6 @@ function displayGoblins() {
                     defeatedGoblinsCount++;
                 }
                 if (playerHp === 0) {
-                    // adventurerImgEl.classList.add('Game-Over'); // For some reason doesn't make my image transparent???? 
                     alert ('GAME OVER!');
                 }
                 adventurerHpEl.textContent = playerHp;
