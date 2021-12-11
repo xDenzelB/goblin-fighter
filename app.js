@@ -24,7 +24,7 @@ form.addEventListener('submit', (e) => {
     const goblinName = data.get('goblin-name');
 
     const newGoblin = {
-        name: goblinName,
+        name: (goblinName === '') ? `Goblin #${Math.floor(Math.random() * 1000)}` : goblinName,
         hp: Math.ceil(Math.random() * 5),
     };
 // display new goblin 
@@ -59,7 +59,7 @@ function displayGoblins() {
                     defeatedGoblinsCount++;
                 }
                 if (playerHp === 0) {
-                    adventurerImgEl.classList.add('Game-Over'); // For some reason doesn't make my image transparent???? 
+                    // adventurerImgEl.classList.add('Game-Over'); // For some reason doesn't make my image transparent???? 
                     alert ('GAME OVER!');
                 }
                 adventurerHpEl.textContent = playerHp;
@@ -68,6 +68,14 @@ function displayGoblins() {
                 displayGoblins();
             });
         } 
+
+        if (goblin.hp <= 0) {
+            goblinEl.classList.add('dead-goblin');
+        }
+
+        if (playerHp <= 0) {
+            adventurerImgEl.classList.add('Game-Over');
+        }
         goblinListEl.append(goblinEl);
     }
 }
