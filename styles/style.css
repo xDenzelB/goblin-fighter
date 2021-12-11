@@ -159,10 +159,9 @@ form {
     font-size: 3rem;
 }
 .game-over {
-    background-color: transparent;
-    transform: rotate(45deg);
+        opacity: .5;
 }
-.dead {
+.dead-goblin {
     opacity: .5;
     cursor: default;
 }
