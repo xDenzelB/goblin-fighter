@@ -92,9 +92,10 @@ footer {
     justify-content: space-between;
 }
 
-.adventurer img {
-    width: 300px;
-    height: 300px;
+#adventurer-img {
+    width: 400px;
+    height: 400px;
+
 }
 
 .adventurer {

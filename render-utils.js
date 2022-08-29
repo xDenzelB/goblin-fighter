@@ -9,7 +9,7 @@ export function renderGoblin(goblinData) {
     nameEl.textContent = goblinData.name;
     hpEl.textContent = goblinData.hp < 0 ? 0 : goblinData.hp;
 
-// changes the emoji of the goblin when it reaches an HP of 0
+    // changes the emoji of the goblin when it reaches an HP of 0
     faceEl.textContent = goblinData.hp > 0 ? '👹' : '💀 ';
 
     if (goblinData.hp < 0) {

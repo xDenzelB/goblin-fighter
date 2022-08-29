@@ -3,14 +3,14 @@ import { renderGoblin } from './render-utils.js';
 
 const defeatedNumberEl = document.querySelector('#defeated-number');
 const adventurerHpEl = document.querySelector('#adventurer-hp');
-const adventurerImgEl = document.querySelector('.adventurer-img');
+const adventurerImgEl = document.querySelector('#adventurer-img');
 
 const form = document.querySelector('form');
 const goblinListEl = document.querySelector('.goblins');
 // let state
 let defeatedGoblinsCount = 0;
 let playerHp = 10;
-let goblins = [
+const goblins = [
     { name: 'Steven', hp: 1 },
     { name: 'Mark', hp: 4 },
 ];
@@ -37,7 +37,7 @@ function displayGoblins() {
     // clear out the DOM 
     goblinListEl.textContent = '';
 
-    for (let goblin of goblins) {
+    for (const goblin of goblins) {
         const goblinEl = renderGoblin(goblin);
         // HP and Attack actions 
         if (goblin.hp > 0) {
@@ -45,15 +45,15 @@ function displayGoblins() {
             goblinEl.addEventListener('click', () => {
                 if (Math.random() < .5) {
                     goblin.hp--;
-                    alert('You sliced' + goblin.name);
+                    alert(`You sliced ${goblin.name}`);
                 } else {
-                    alert('You tried to slice' + goblin.name + 'but it was not effective');
+                    alert(`You tried to slice ${goblin.name} but it was not effective`);
                 }
                 if (Math.random() < .33) {
                     playerHp--;
-                    alert(goblin.name + 'Hit you!!');
+                    alert(`${goblin.name} Hit you!!`);
                 } else {
-                    alert(goblin.name + 'Tried to hit you but missed');
+                    alert(`${goblin.name} Tried to hit you but missed`);
                 }
                 if (goblin.hp === 0) {
                     defeatedGoblinsCount++;
@@ -72,8 +72,8 @@ function displayGoblins() {
             goblinEl.classList.add('dead-goblin');
         }
 
-        if (playerHp <= 0) {
-            adventurerImgEl.classList.add('Game-Over');
+        else if (playerHp <= 0) {
+            adventurerImgEl.classList.add('game-over');
         }
         goblinListEl.append(goblinEl);
     }
